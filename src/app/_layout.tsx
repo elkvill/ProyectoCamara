@@ -6,8 +6,8 @@ export default function RootLayout(){
         <View style={{flex:1, backgroundColor:"lightgreen"}}>
             
             <Stack screenOptions={{headerTintColor:"blue", headerTitleAlign:"center"}}>
-                <Stack.Screen name="camera" options={{headerShown:false}}/>
                 <Stack.Screen name="index" options={{title:"Inicio"}}/>
+                <Stack.Screen name="camera" options={{headerShown:false}}/>
             </Stack>
 
         </View>

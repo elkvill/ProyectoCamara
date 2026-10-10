@@ -1,8 +1,22 @@
 import { Link } from "expo-router";
 import { Text, View, StyleSheet, Pressable } from "react-native";
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import { useEffect } from "react";
+import * as FileSystem from 'expo-file-system';
 
 export default function HomeScreen(){
+    //para visualizar las imagenes 
+    useEffect(()=> {
+        loadFiles()
+    }, []);
+
+    const loadFiles = async()=> {
+        if (!FileSystem.documentDirectory) return
+        // para obtener las imagenes
+        const res = await FileSystem.readDirectoryAsync(FileSystem.documentDirectory)
+
+        console.log("Imagenes:", res)
+    }
     // Que es un layout?}
     return(
         <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
